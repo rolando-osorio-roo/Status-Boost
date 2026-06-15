@@ -1,0 +1,67 @@
+owner: rolando-osorio-roo
+repo: Status-Boost
+
+sites:
+  - name: Boost CRM
+    url: https://app.boost.com.gt
+    expectedStatusCodes:
+      - 200
+      - 301
+      - 302
+
+  - name: Boost API
+    url: https://boostapi.onrender.com/api
+    expectedStatusCodes:
+      - 200
+
+  - name: Boost API Health
+    url: https://boostapi.onrender.com/api/payments/webhooks/health
+    expectedStatusCodes:
+      - 200
+
+  - name: Boost Docs
+    url: https://boost-docs-blue.vercel.app
+    expectedStatusCodes:
+      - 200
+
+status-website:
+  baseUrl: /Status-Boost
+  name: Boost CRM Status
+  theme: dark
+  introTitle: Estado de los servicios de **Boost CRM**
+  introMessage: Monitoreo automatizado cada 5 minutos via [Upptime](https://github.com/upptime/upptime).
+  navbar:
+    - title: Ir a Boost CRM
+      href: https://app.boost.com.gt
+    - title: Documentacion
+      href: https://boost-docs-blue.vercel.app
+
+i18n:
+  activeIncidents: Incidentes activos
+  allSystemsOperational: Todos los sistemas operativos
+  incidentReport: "Reporte de incidente #$NUMBER"
+  activeMaintenances: Mantenimiento activo
+  scheduledMaintenances: Mantenimiento programado
+  noIncidents: No hay incidentes reportados
+  incidentDetails: Detalles del incidente
+  pastIncidents: Incidentes pasados
+  pastIncidentsResolved: Resuelto en $MINUTES minutos
+  liveStatus: Estado en vivo
+  overallUptime: "Uptime: $UPTIME"
+  overallUptimeTitle: Uptime general
+  responseTime: Tiempo de respuesta
+  responseTimeTitle: Tiempo de respuesta
+  ms: ms
+  loading: Cargando
+  navBrand: Boost CRM Status
+
+workflowSchedule:
+  graphs: "0 0 * * *"
+  responseTime: "0 23 * * *"
+  staticSite: "0 1 * * *"
+  summary: "0 0 * * *"
+  updateTemplate: "0 0 * * 1"
+  updates: "0 3 * * *"
+  uptime: "*/5 * * * *"
+
+skipDescriptionUpdate: true
