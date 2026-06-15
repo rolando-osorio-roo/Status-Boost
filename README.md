@@ -4,12 +4,12 @@ Estado en tiempo real de los servicios de [Boost CRM](https://app.boost.com.gt),
 
 ## Servicios monitoreados
 
-| Servicio | URL |
-|----------|-----|
-| Boost CRM (Web) | https://app.boost.com.gt |
-| Boost API | https://boostapi.onrender.com/api |
+| Servicio         | URL                                                        |
+| ---------------- | ---------------------------------------------------------- |
+| Boost CRM (Web)  | https://app.boost.com.gt                                   |
+| Boost API        | https://boostapi.onrender.com/api                          |
 | Boost API Health | https://boostapi.onrender.com/api/payments/webhooks/health |
-| Boost Docs | https://boost-docs-blue.vercel.app |
+| Boost Docs       | https://boost-docs-blue.vercel.app                         |
 
 ## Como funciona
 
