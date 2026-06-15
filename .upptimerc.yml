@@ -4,6 +4,7 @@ repo: Status-Boost
 sites:
   - name: Boost CRM
     url: https://app.boost.com.gt
+    icon: https://app.boost.com.gt/favicon.svg
     expectedStatusCodes:
       - 200
       - 301
@@ -11,16 +12,19 @@ sites:
 
   - name: Boost API
     url: https://boostapi.onrender.com/api
+    icon: https://app.boost.com.gt/favicon.svg
     expectedStatusCodes:
       - 200
 
   - name: Boost API Health
     url: https://boostapi.onrender.com/api/payments/webhooks/health
+    icon: https://app.boost.com.gt/favicon.svg
     expectedStatusCodes:
       - 200
 
   - name: Boost Docs
     url: https://boost-docs-blue.vercel.app
+    icon: https://app.boost.com.gt/favicon.svg
     expectedStatusCodes:
       - 200
 
@@ -28,6 +32,8 @@ status-website:
   baseUrl: /Status-Boost
   name: Boost CRM Status
   theme: dark
+  logoUrl: https://app.boost.com.gt/logo-boost.png
+  favicon: https://app.boost.com.gt/favicon.svg
   introTitle: Estado de los servicios de **Boost CRM**
   introMessage: Monitoreo automatizado cada 5 minutos via [Upptime](https://github.com/upptime/upptime).
   navbar:
@@ -35,6 +41,195 @@ status-website:
       href: https://app.boost.com.gt
     - title: Documentacion
       href: https://boost-docs-blue.vercel.app
+  css: |
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --boost-bg: #0a0a0a;
+      --boost-bg-main: #171717;
+      --boost-card: #1d1d1d;
+      --boost-card-dark: #1f1f1f;
+      --boost-border: #434343;
+      --boost-border-secondary: #383838;
+      --boost-blue: #24c9fc;
+      --boost-blue-dark: #0b4774;
+      --boost-success: #00cc55;
+      --boost-error: #ed1010;
+      --boost-text: #ededed;
+      --boost-text-secondary: #bcbcbc;
+      --boost-text-muted: #868686;
+    }
+
+    * {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    }
+
+    body {
+      background: var(--boost-bg) !important;
+      color: var(--boost-text) !important;
+    }
+
+    main {
+      background: var(--boost-bg) !important;
+    }
+
+    /* Navbar */
+    nav, header, .navbar {
+      background: var(--boost-bg) !important;
+      border-bottom: 1px solid var(--boost-border-secondary) !important;
+    }
+
+    nav a, header a, .navbar a {
+      color: var(--boost-text-secondary) !important;
+      transition: color 0.2s ease !important;
+    }
+
+    nav a:hover, header a:hover, .navbar a:hover {
+      color: var(--boost-blue) !important;
+    }
+
+    /* All Systems Operational banner */
+    .green {
+      background: linear-gradient(135deg, #003d1a, #00260f) !important;
+      border: 1px solid rgba(0, 204, 85, 0.3) !important;
+      border-radius: 12px !important;
+      color: var(--boost-success) !important;
+    }
+
+    /* Incident / degraded banners */
+    .yellow {
+      background: linear-gradient(135deg, #3d2e00, #261c00) !important;
+      border: 1px solid rgba(255, 193, 7, 0.3) !important;
+      border-radius: 12px !important;
+    }
+
+    .red {
+      background: linear-gradient(135deg, #3d0000, #260000) !important;
+      border: 1px solid rgba(237, 16, 16, 0.3) !important;
+      border-radius: 12px !important;
+      color: var(--boost-error) !important;
+    }
+
+    /* Service cards */
+    .service, article, .site-status {
+      background: var(--boost-card) !important;
+      border: 1px solid var(--boost-border-secondary) !important;
+      border-radius: 12px !important;
+      transition: border-color 0.2s ease !important;
+    }
+
+    .service:hover, article:hover, .site-status:hover {
+      border-color: var(--boost-border) !important;
+    }
+
+    /* Links and accents */
+    a {
+      color: var(--boost-blue) !important;
+    }
+
+    a:hover {
+      color: #5dd8fd !important;
+    }
+
+    /* Headings */
+    h1, h2, h3, h4 {
+      color: var(--boost-text) !important;
+      font-weight: 600 !important;
+    }
+
+    /* Muted text */
+    p, span, small, .text-muted, time {
+      color: var(--boost-text-secondary) !important;
+    }
+
+    /* Uptime bars */
+    .uptime-bar .up, .bar .up {
+      background: var(--boost-success) !important;
+    }
+
+    .uptime-bar .down, .bar .down {
+      background: var(--boost-error) !important;
+    }
+
+    .uptime-bar .degraded, .bar .degraded {
+      background: #ffc107 !important;
+    }
+
+    /* Operational text */
+    .operational, .status-up {
+      color: var(--boost-success) !important;
+    }
+
+    .status-down {
+      color: var(--boost-error) !important;
+    }
+
+    /* Buttons and interactive */
+    button, .btn {
+      background: var(--boost-card) !important;
+      border: 1px solid var(--boost-border-secondary) !important;
+      color: var(--boost-text) !important;
+      border-radius: 8px !important;
+      transition: all 0.2s ease !important;
+    }
+
+    button:hover, .btn:hover {
+      border-color: var(--boost-blue) !important;
+      color: var(--boost-blue) !important;
+    }
+
+    /* Time period selector */
+    .period-selector button.active,
+    .tab.active,
+    [aria-selected="true"] {
+      background: var(--boost-blue-dark) !important;
+      border-color: var(--boost-blue) !important;
+      color: var(--boost-blue) !important;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--boost-border-secondary) !important;
+      color: var(--boost-text-muted) !important;
+    }
+
+    footer a {
+      color: var(--boost-text-muted) !important;
+    }
+
+    footer a:hover {
+      color: var(--boost-blue) !important;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--boost-bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--boost-border-secondary);
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--boost-border);
+    }
+
+    /* Logo sizing */
+    nav img, header img, .logo img {
+      max-height: 32px !important;
+    }
+
+    /* Smooth transitions */
+    * {
+      transition-property: color, background-color, border-color;
+      transition-duration: 0.15s;
+      transition-timing-function: ease;
+    }
 
 i18n:
   activeIncidents: Incidentes activos
