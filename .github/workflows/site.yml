@@ -13,11 +13,18 @@ jobs:
       contents: write
       pages: write
       id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GH_PAT || github.token }}
       - uses: upptime/uptime-monitor@v1.42.5
         with:
-          token: ${{ secrets.GH_PAT || github.token }}
+          token: ${{ github.token }}
           command: site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/output
+      - id: deploy
+        uses: actions/deploy-pages@v4
